@@ -2,11 +2,22 @@ steps:
   - label: "Python 3.8"
     command:
       - "pip install -r requirements.txt"
-      - "python montecarlopi.py > pi.txt"
-    artifact_paths: "./pi.txt"
+      - "python montecarlopi.py > pi38.txt"
+    artifact_paths: "./pi38.txt"
     plugins:
       - docker#v3.5.0:
           image: "python:3.8-slim"
+          always-pull: true
+          environment:
+            - "VARIABLE=uno"
+  - label: "Python 2.7"
+    command:
+      - "pip install -r requirements.txt"
+      - "python montecarlopi.py > pi27.txt"
+    artifact_paths: "./pi27.txt"
+    plugins:
+      - docker#v3.5.0:
+          image: "python:2.7-slim"
           always-pull: true
           environment:
             - "VARIABLE=uno"
