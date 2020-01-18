@@ -3,7 +3,6 @@ steps:
     command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi.txt"
-      - "python fallo.py"
     retry:
       automatic: true
     artifact_paths: "./pi.txt"
@@ -17,7 +16,6 @@ steps:
     command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi.txt"
-      - "python fallo.py"
     retry:
       automatic: true
     artifact_paths: "./pi.txt"
