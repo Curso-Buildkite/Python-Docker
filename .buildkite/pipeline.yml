@@ -5,7 +5,6 @@ steps:
       - "enviere"
     retry:
       automatic: true
-      limit: 2
     artifact_paths: "./pi.txt"
     plugins:
       - docker#v3.5.0:
