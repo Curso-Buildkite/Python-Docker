@@ -3,6 +3,9 @@ steps:
     command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi38.txt"
+      - "python fallo.py"
+    retry:
+      automatic: true
     artifact_paths: "./pi38.txt"
     plugins:
       - docker#v3.5.0:
@@ -14,6 +17,9 @@ steps:
     command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi27.txt"
+      - "python fallo.py"
+    retry:
+      automatic: true
     artifact_paths: "./pi27.txt"
     plugins:
       - docker#v3.5.0:
