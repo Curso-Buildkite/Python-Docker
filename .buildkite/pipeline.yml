@@ -2,7 +2,7 @@ steps:
   - command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi.txt"
-      - "enviere"
+      - "python fallo.py"
     retry:
       automatic: true
     artifact_paths: "./pi.txt"
