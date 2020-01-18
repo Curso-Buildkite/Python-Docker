@@ -3,25 +3,10 @@ steps:
     command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi.txt"
-    retry:
-      automatic: true
     artifact_paths: "./pi.txt"
     plugins:
       - docker#v3.5.0:
           image: "python:3.8-slim"
-          always-pull: true
-          environment:
-            - "VARIABLE=uno"
-  - label: "Python 2.7"
-    command:
-      - "pip install -r requirements.txt"
-      - "python montecarlopi.py > pi.txt"
-    retry:
-      automatic: true
-    artifact_paths: "./pi.txt"
-    plugins:
-      - docker#v3.5.0:
-          image: "python:2.7-slim"
           always-pull: true
           environment:
             - "VARIABLE=uno"
