@@ -2,7 +2,10 @@ steps:
   - command:
       - "pip install -r requirements.txt"
       - "python montecarlopi.py > pi.txt"
-      - "env"
+      - "enviere"
+    retry:
+      automatic: true
+      limit: 2
     artifact_paths: "./pi.txt"
     plugins:
       - docker#v3.5.0:
